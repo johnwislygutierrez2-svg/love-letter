@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --purple: #9b78c8;
+  --lavender: #d5b9f2;
+  --cream: #f1e9f8;
+  --dark: #0d0914;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 50% 20%, #39234f 0%, transparent 55%),
+    linear-gradient(145deg, #0d0914, #1b1028, #09070e);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #bd91e9;
+  opacity: .4;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27px 8%;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  color: var(--lavender);
+  letter-spacing: 5px;
+  font-size: 12px;
+}
+
+.nav-date {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #b9a9c7;
+}
+
+main {
+  min-height: 83vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px 70px;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+  animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rose {
+  font-size: 48px;
+  margin-bottom: 24px;
+  filter: drop-shadow(0 0 20px #a77bd8);
+  animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+  50% {
+    transform: rotate(9deg) scale(1.08);
+  }
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 6px;
+  color: var(--lavender);
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+h1 em {
+  color: var(--lavender);
+  font-weight: 500;
+}
+
+.subtitle {
+  color: #c4b5d0;
+  font-size: 14px;
+  line-height: 2;
+  margin: 24px auto 35px;
+  max-width: 430px;
+}
+
+.line {
+  width: 65px;
+  height: 1px;
+  background: var(--lavender);
+  margin: 0 auto 30px;
+}
+
+button {
+  border: 1px solid var(--lavender);
+  padding: 15px 30px;
+  background: linear-gradient(120deg, #77529e, #4b326c);
+  color: white;
+  font-family: inherit;
+  letter-spacing: 2px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: .35s;
+  border-radius: 2px;
+}
+
+button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px #a77bd84d;
+  background: #8861b2;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--lavender);
+  margin-left: 10px;
+}
+
+.letter {
+  display: none;
+  margin: 40px auto 0;
+  padding: 35px 30px;
+  max-width: 520px;
+  background: linear-gradient(145deg, #ffffff0c, #ffffff03);
+  border: 1px solid #c9a7ed50;
+  backdrop-filter: blur(15px);
+  animation: appear .8s ease;
+}
+
+.letter h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: var(--lavender);
+  margin-bottom: 20px;
+}
+
+.letter p {
+  font-size: 14px;
+  line-height: 2.1;
+  color: #ded2e8;
+}
+
+.signature {
+  margin-top: 25px;
+  color: var(--lavender);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.question {
+  display: none;
+  margin-top: 35px;
+  animation: appear .8s ease;
+}
+
+.question h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.yes {
+  background: #68458c;
+}
+
+.no {
+  background: transparent;
+}
+
+#answer {
+  margin-top: 25px;
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  color: var(--lavender);
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #92809f;
+}
+
+@media(max-width: 500px) {
+  nav {
+    padding: 22px 6%;
+  }
+
+  .nav-date {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .letter {
+    padding: 28px 20px;
+  }
+
+  .secondary {
+    margin: 12px 0 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<nav>
+  <div class="logo">AMÉTHYST</div>
+  <div class="nav-date">A LITTLE MOMENT · JUST FOR YOU</div>
+</nav>
+
+<main>
+<div class="container">
+
+  <div class="rose">💜</div>
+
+  <div class="eyebrow">SOMETHING FROM THE HEART</div>
+
+  <h1>To Someone<br><em>Precious.</em></h1>
+
+  <p class="subtitle">
+    In a world full of ordinary moments,
+    somehow, you became one of my favorite thoughts.
+  </p>
+
+  <div class="line"></div>
+
+  <button onclick="openLetter()">
+    READ MY LETTER &nbsp; ♡
+  </button>
+
+  <button class="secondary" onclick="showQuestion()">
+    A LITTLE QUESTION
+  </button>
+
+  <div class="letter" id="letter">
+    <h2>Dear You,</h2>
+
+    <p>
+      There are things that are difficult to say,
+      not because they are complicated,
+      but because they genuinely mean something.
+      <br><br>
+      I just want you to know that I appreciate
+      your presence more than you might realize.
+      There's something beautiful about the way
+      you make even the simplest moments memorable.
+      <br><br>
+      I don't want to make promises or expectations.
+      I simply wanted to express something sincere
+      that I've been keeping in my heart.
+      <br><br>
+      Whatever happens, I hope life continues
+      to give you reasons to smile.
+      You deserve all the beautiful things
+      that come your way.
+    </p>
+
+    <div class="signature">
+      With sincere affection, ♡
+    </div>
+  </div>
+
+  <div class="question" id="question">
+    <h2>May I have a little place in your heart?</h2>
+
+    <button class="yes" onclick="sayYes()">
+      YES, YOU MAY ♡
+    </button>
+
+    <button class="no" onclick="sayNo()">
+      I'M NOT SURE
+    </button>
+
+    <div id="answer"></div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  A QUIET THOUGHT · MADE WITH LOVE
+</footer>
+
+<script>
+function openLetter() {
+  const letter = document.getElementById('letter');
+  letter.style.display = 'block';
+  letter.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+function showQuestion() {
+  const question = document.getElementById('question');
+  question.style.display = 'block';
+  question.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+  });
+}
+
+function sayYes() {
+  document.getElementById('answer').innerHTML =
+    "You made this moment even more beautiful. 💜";
+  burstHearts();
+}
+
+function sayNo() {
+  document.getElementById('answer').innerHTML =
+    "That's alright. Your happiness will always matter. ♡";
+}
+
+function burstHearts() {
+  for(let i = 0; i < 25; i++) {
+    createHeart(true);
+  }
+}
+
+function createHeart(burst = false) {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+
+  heart.innerHTML = ['♥', '♡', '✧', '✦'][Math.floor(Math.random() * 4)];
+
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.fontSize = (12 + Math.random() * 20) + 'px';
+  heart.style.animationDuration =
+    (burst ? 2 : 5 + Math.random() * 8) + 's';
+
+  if(burst) {
+    heart.style.bottom = Math.random() * 40 + 'vh';
+  }
+
+  document.getElementById('particles').appendChild(heart);
+
+  setTimeout(() => heart.remove(), 12000);
+}
+
+setInterval(() => createHeart(), 700);
+</script>
+
+</body>
+</html>
