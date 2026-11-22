@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Letter For You ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(145deg, #260914, #761c38, #16070d);
+  font-family: Georgia, serif;
+  color: #fff0e8;
+}
+
+.card {
+  width: 100%;
+  max-width: 430px;
+  padding: 35px 25px;
+  text-align: center;
+  border: 1px solid #b96b80;
+  border-radius: 22px;
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 15px 50px #0006;
+}
+
+.rose {
+  font-size: 65px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+}
+
+p {
+  line-height: 1.9;
+  color: #f5dce3;
+  font-size: 15px;
+}
+
+button {
+  margin-top: 18px;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #e45c7d;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#letter {
+  display: none;
+  text-align: left;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 15px;
+  background: #210b13aa;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.footer {
+  margin-top: 25px;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="rose">🌹</div>
+
+  <p>JUST FOR YOU</p>
+
+  <h1>A Letter For You</h1>
+
+  <p>
+    Some words are better written
+    than spoken.
+  </p>
+
+  <button onclick="openLetter()">
+    OPEN YOUR LETTER ❤️
+  </button>
+
+  <div id="letter">
+    <h2>Dear Someone Special,</h2>
+
+    <p>
+      I don't really know how to start this,
+      but I just want you to know that
+      you are someone worth appreciating.
+    </p>
+
+    <p>
+      Your presence makes ordinary days
+      a little more special. I may not say
+      it often, but I'm genuinely happy
+      to have crossed paths with you.
+    </p>
+
+    <p>
+      No pressure and no expectations.
+      I just wanted to make you smile today.
+    </p>
+
+    <p>
+      Take care always. ❤️
+    </p>
+
+    <h3>From someone who appreciates you.</h3>
+  </div>
+
+  <div class="footer">MADE WITH LOVE ♡</div>
+</div>
+
+<script>
+function openLetter() {
+  document.getElementById("letter").style.display = "block";
+}
+</script>
+
+</body>
+</html>
