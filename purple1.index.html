@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Someone Special 💜</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #171025, #302044, #49345f);
+  color: #f7efff;
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+  padding: 45px 28px;
+  border: 1px solid rgba(232, 210, 255, .25);
+  border-radius: 22px;
+  background: rgba(255,255,255,.06);
+  box-shadow: 0 20px 70px rgba(0,0,0,.3);
+  backdrop-filter: blur(10px);
+}
+
+.top {
+  color: #d8b8f5;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 8vw, 48px);
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  color: #cbb8dc;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+
+.line {
+  width: 55px;
+  height: 1px;
+  background: #c9a5ed;
+  margin: 25px auto;
+}
+
+.letter {
+  text-align: left;
+  line-height: 1.9;
+  color: #e7d9f2;
+  font-size: 14px;
+  margin: 25px 0;
+}
+
+.letter p {
+  margin-bottom: 16px;
+}
+
+.question {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-style: italic;
+  margin: 30px 0 20px;
+  color: #f1dcff;
+}
+
+button {
+  border: 1px solid #c9a5ed;
+  background: #c9a5ed;
+  color: #241632;
+  padding: 13px 23px;
+  border-radius: 30px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  margin: 7px;
+}
+
+button:hover {
+  background: #e4ccfa;
+}
+
+.music-btn {
+  background: transparent;
+  color: #ead8fa;
+  border: 1px solid #c9a5ed;
+}
+
+.footer {
+  margin-top: 35px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #bda7d0;
+}
+
+.hearts {
+  position: fixed;
+  color: rgba(220, 185, 255, .25);
+  animation: float 7s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-15vh) rotate(30deg); opacity: 0; }
+}
+
+#answer {
+  color: #e8cfff;
+  margin-top: 15px;
+  font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+  <source src="music/paraluman.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+  <div class="top">A LITTLE SOMETHING FOR YOU</div>
+
+  <h1>To Someone Precious.</h1>
+
+  <div class="subtitle">A LETTER FROM THE HEART ♡</div>
+
+  <div class="line"></div>
+
+  <div class="letter">
+    <p>Dear You,</p>
+
+    <p>
+      I don't really know how to put everything into words,
+      but I just want you to know that you are someone
+      special to me.
+    </p>
+
+    <p>
+      Maybe this is just a simple letter, but I hope
+      it brings a little smile to your face.
+      You deserve something beautiful, even on ordinary days.
+    </p>
+
+    <p>With warm thoughts,</p>
+    <p>Someone who appreciates you. ♡</p>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="question">
+    May I have a little place in your heart?
+  </div>
+
+  <button onclick="showAnswer()">YES ♡</button>
+  <button class="music-btn" onclick="toggleMusic()" id="musicBtn">
+    ♫ PLAY PARALUMAN
+  </button>
+
+  <div id="answer"></div>
+
+  <div class="footer">MADE WITH LOVE · FEBRUARY 14</div>
+
+</div>
+
+<script>
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+function toggleMusic() {
+  if (bgMusic.paused) {
+    bgMusic.play().then(() => {
+      musicBtn.innerHTML = "♫ PAUSE MUSIC";
+    }).catch(() => {
+      alert("Please check your uploaded MP3 file.");
+    });
+  } else {
+    bgMusic.pause();
+    musicBtn.innerHTML = "♫ PLAY PARALUMAN";
+  }
+}
+
+function showAnswer() {
+  document.getElementById("answer").innerHTML =
+    "That would mean a lot to me. Thank you. 💜";
+}
+
+window.addEventListener("load", () => {
+  bgMusic.play().then(() => {
+    musicBtn.innerHTML = "♫ PAUSE MUSIC";
+  }).catch(() => {
+    musicBtn.innerHTML = "♫ PLAY PARALUMAN";
+  });
+});
+
+for (let i = 0; i < 12; i++) {
+  const heart = document.createElement("div");
+  heart.className = "hearts";
+  heart.innerHTML = "♡";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.animationDelay = Math.random() * 7 + "s";
+  heart.style.fontSize = (15 + Math.random() * 20) + "px";
+  document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
